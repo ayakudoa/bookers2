@@ -1,0 +1,53 @@
+<% if flash[:notice] %>
+<p id="notice">
+  <%= flash[:notice] %>
+</p>
+<% end %>
+
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+<h1>Editing Book</h1>
+<%= form_with model: @book, url: book_path(@book.id) do |f| %>
+
+<table>
+<tr>
+<div class="field">
+<label for="book_title">Title</label>
+</tr>
+<tr>
+  <%= f.text_field :title %>
+</div>
+</tr>
+
+<tr>
+<div class="field">
+<label for="book_body">Opinion</label>
+<tr>
+<tr>
+  <%= f.text_area :body %>
+</div>
+</tr>
+</table>
+
+<div class="field">
+  <%= f.submit 'Update Book', class:'btn btn-success' %>
+</div>
+<% end %>
+
+<table>
+<tr>
+<td><%= link_to "Show", book_path(@book.id) %></td>
+<td><p>|</p></td>
+<td><%= link_to "Back", books_path %></td>
+</tr>
+</table>
+
+
+
