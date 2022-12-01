@@ -1,6 +1,6 @@
 <%= flash[:notice] %>
 
-<%= render 'books/list', book: @book %>
+<%= render 'books/list', {book: @books, user: @book.user} %>
 
  <% if @book.errors.any? %>
   <ul class="alert alert-danger" role="alert">

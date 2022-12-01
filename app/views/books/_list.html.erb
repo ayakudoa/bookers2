@@ -3,21 +3,21 @@
 
 <div class="col-md-3">
   <h2>User info</h2>
-  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
+  <p><%= image_tag user.get_profile_image(100,100) %></p>
 
   <!-- ユーザーの詳細 -->
   <div class="profile-container">
 
-   <h6>name <%= book.user.name %></h6>
-	  <h6>introduction <%= book.user.introduction %></h6>
+   <h6>name <%= user.name %></h6>
+	  <h6>introduction <%= user.introduction %></h6>
 
   <div class="btn btn-outline-secondary btn-block">
-  <p><%= link_to edit_user_path(book.user) do %></p>
+  <p><%= link_to edit_user_path(user) do %></p>
   　<i class="fas fa-user-cog "></i>
    <% end %>
  </div>
 
-<h2>New Book</h2>
+<h2>New book</h2>
 
 <%= form_with model: book do |f| %>
  <p>Title</p>
